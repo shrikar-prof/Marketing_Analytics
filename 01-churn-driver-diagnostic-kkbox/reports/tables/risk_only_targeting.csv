@@ -1,0 +1,11 @@
+population,top_share_of_customers_pct,customers,share_of_leavers_pct,share_of_lost_revenue_pct,churn_rate_in_group_pct,lost_revenue_usd_per_month,share_of_monthly_revenue_exposed_pct
+"all 7,043 (5,634 out-of-fold + 1,409 held-out)",10,704,28.62,30.96,75.99,43074.5,12.44
+"all 7,043 (5,634 out-of-fold + 1,409 held-out)",20,1409,51.74,55.23,68.63,76838.85,24.4
+"all 7,043 (5,634 out-of-fold + 1,409 held-out)",30,2113,67.04,70.96,59.3,98727.2,36.35
+"all 7,043 (5,634 out-of-fold + 1,409 held-out)",40,2817,78.87,81.59,52.33,113518.2,47.17
+"all 7,043 (5,634 out-of-fold + 1,409 held-out)",50,3522,88.34,89.79,46.88,124930.55,56.87
+"held-out test 1,409 only",10,141,28.88,31.21,76.6,8494.9,12.47
+"held-out test 1,409 only",20,282,51.07,53.79,67.73,14637.9,24.01
+"held-out test 1,409 only",30,423,66.04,70.01,58.39,19052.6,36.29
+"held-out test 1,409 only",40,564,77.81,80.69,51.6,21960.7,47.43
+"held-out test 1,409 only",50,704,87.43,88.98,46.45,24216.95,56.99

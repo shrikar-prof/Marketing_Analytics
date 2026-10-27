@@ -1,0 +1,4 @@
+family,nested_auc_mean,nested_auc_sd,nested_top20_mean,nested_top20_sd,nested_prauc_mean,nested_brier_mean,nested_ece_mean,final_best_auc,final_best_auc_sd,trials,pruned
+glm,0.8503,0.0106,0.5526,0.0174,0.6731,0.1328,0.0235,0.851,0.0064,60,21
+xgb,0.8503,0.0088,0.5559,0.0167,0.671,0.1332,0.0252,0.851,0.0061,60,21
+rf,0.8476,0.0064,0.5446,0.0163,0.6625,0.1343,0.0273,0.8484,0.0073,60,17

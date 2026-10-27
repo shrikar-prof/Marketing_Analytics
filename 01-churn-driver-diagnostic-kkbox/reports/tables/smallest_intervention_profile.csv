@@ -1,0 +1,8 @@
+lever,n,mean_predicted_risk_pct,actual_churn_rate_pct,mean_bill,pct_fiber,pct_first12,actual_lost_usd,actual_share_of_all_lost_pct
+Contract: month-to-month -> one year (bill unchanged),1060,66.66,66.89,85.1,98.11,83.58,60324.3,43.36
+PaymentMethod: electronic check -> automatic bank transfer (bill unchanged),771,49.92,48.64,95.75,99.61,16.99,35610.45,25.59
+PaperlessBilling: yes -> no (bill unchanged),1119,51.3,50.67,93.57,99.55,23.5,52636.95,37.83
+TechSupport: no -> yes (bill rises by add-on price),1078,57.27,55.66,86.87,97.77,38.87,51983.3,37.36
+OnlineSecurity: no -> yes (bill rises by add-on price),1105,57.16,56.2,88.4,99.19,38.01,54749.55,39.35
+TechSupport: no -> yes (bill unchanged),451,56.8,54.77,81.96,99.11,40.13,20444.1,14.69
+OnlineSecurity: no -> yes (bill unchanged),521,58.19,56.43,81.36,98.85,46.26,24121.45,17.34

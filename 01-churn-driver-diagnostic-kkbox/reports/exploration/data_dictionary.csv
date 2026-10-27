@@ -1,0 +1,52 @@
+table,column,meaning,type,unit,allowed_values_or_range,share_missing_pct,missing_rows,distinct_values,example,model_input_note,expected_direction,motivating_hypothesis,example_7590-VHVEG
+clean,customerID,Unique account code,object,text id,"7,043 distinct values",0.0,0,7043,7590-VHVEG,"identifier: unique per row, carries no pattern; keep for joining scores back, never as a model input",,,
+clean,gender,Customer gender as recorded,object,category,Female / Male,0.0,0,2,Female,"fine as an input, but see hypotheses: no churn difference found; consider fairness review before use",,,
+clean,SeniorCitizen,"1 if the customer is a senior citizen, else 0",int64,0/1 flag,0.00 to 1.00,0.0,0,2,0,fine,,,
+clean,Partner,Customer has a partner,object,Yes/No,No / Yes,0.0,0,2,Yes,fine,,,
+clean,Dependents,Customer has dependents (children etc.),object,Yes/No,No / Yes,0.0,0,2,No,fine,,,
+clean,tenure,Months the customer has been with the company,int64,months,0.00 to 72.00,0.0,0,73,1,"fine, but for churners it is measured up to exit, for stayers up to the snapshot: possible leakage, unclear from this data",,,
+clean,PhoneService,Customer has home phone service,object,Yes/No,No / Yes,0.0,0,2,No,fine; partly overlaps with MultipleLines,,,
+clean,MultipleLines,Has more than one phone line (No also covers 'no phone service'),object,Yes/No,No / Yes,0.0,0,2,No,fine; use with PhoneService,,,
+clean,InternetService,Type of internet service,object,category,DSL / Fiber optic / No,0.0,0,3,DSL,fine,,,
+clean,OnlineSecurity,Has online security add-on,object,category,No / Yes,0.0,0,2,No,fine after cleaning: 'No internet service' repeats InternetService=No,,,
+clean,OnlineBackup,Has online backup add-on,object,category,No / Yes,0.0,0,2,Yes,fine after cleaning (same quirk as OnlineSecurity),,,
+clean,DeviceProtection,Has device protection add-on,object,category,No / Yes,0.0,0,2,No,fine after cleaning (same quirk),,,
+clean,TechSupport,Has tech support add-on,object,category,No / Yes,0.0,0,2,No,fine after cleaning (same quirk),,,
+clean,StreamingTV,Streams TV through the service,object,category,No / Yes,0.0,0,2,No,fine after cleaning (same quirk),,,
+clean,StreamingMovies,Streams movies through the service,object,category,No / Yes,0.0,0,2,No,fine after cleaning (same quirk),,,
+clean,Contract,Contract length,object,category,Month-to-month / One year / Two year,0.0,0,3,Month-to-month,fine,,,
+clean,PaperlessBilling,"Bills sent by e-mail, not paper",object,Yes/No,No / Yes,0.0,0,2,Yes,fine,,,
+clean,PaymentMethod,How the customer pays,object,category,Bank transfer (automatic) / Credit card (automatic) / Electronic check / Mailed check,0.0,0,4,Electronic check,fine,,,
+clean,MonthlyCharges,Amount billed per month now,float64,US dollars per month,18.25 to 118.75,0.0,0,1585,29.85,fine; also the revenue measure used in this project,,,
+clean,TotalCharges,Total billed over the customer's life; 11 missing for tenure-0 accounts,float64,US dollars,"18.80 to 8,684.80",0.16,11,6530,29.85,derived (about tenure x price) and collinear with tenure and MonthlyCharges; handle missing; use with care,,,
+clean,Churn,Customer left in the observation window,object,Yes/No,No / Yes,0.0,0,2,No,TARGET. Never use as input,,,
+clean,churn_flag,"1 if the customer left, 0 if stayed",int64,0/1 flag,0.00 to 1.00,0.0,0,2,0,TARGET (numeric copy of Churn). Never use as input,(target),All hypotheses,0
+clean,has_internet,1 if the customer has internet service,int64,0/1 flag,0.00 to 1.00,0.0,0,2,1,derived from InternetService: duplicates it; use one or the other,lower churn (no-internet customers expected to leave less),"H2, H9 (internet type)",1
+clean,n_addons,Count of the six add-ons the customer has,int64,count 0-6,0.00 to 6.00,0.0,0,7,1,derived from six columns; do not use together with all six,lower churn with more add-ons,H5 (tech support),1
+clean,n_protection_addons,"Count of security, backup, device protection, tech support the customer has",int64,count 0-4,0.00 to 4.00,0.0,0,5,1,derived from four columns; do not use together with them,lower churn with more protection,H5 (tech support),1
+clean,tenure_band,Tenure grouped into bands,object,category (ordered),0-6 months / 13-24 months / 25-48 months / 49-72 months / 7-12 months,0.0,0,5,0-6 months,derived from tenure; for reporting; redundant for models that take tenure,lower churn at longer tenure,H3 (first 12 months),0-6 months
+clean,monthly_charge_band,Monthly price grouped into bands,object,category (ordered),$30-50 / $50-70 / $70-90 / $90+ / under $30,0.0,0,5,under $30,derived from MonthlyCharges; for reporting,higher churn at higher bills,H6 (leavers pay more),under $30
+clean,autopay,1 if paying by bank transfer or credit card automatically,int64,0/1 flag,0.00 to 1.00,0.0,0,2,0,derived from PaymentMethod; overlaps with it,lower churn when automatic,H4 (electronic check),0 (pays by electronic check)
+clean,avg_monthly_spend,Average dollars billed per month of tenure,float64,US dollars per month,13.78 to 121.40,0.16,11,4577,29.85,derived from TotalCharges / tenure; missing when tenure is 0; collinear with MonthlyCharges,higher churn at higher spend,H6,29.85
+clean,price_vs_history_pct,Current monthly price vs the customer's lifetime average,float64,percent,-36.44 to 45.11,0.16,11,1923,0.0,"derived; missing when tenure is 0; for churners built from totals up to exit: leakage risk, unclear from this data",unclear; no prediction made,H6 (price),0.0
+raw,customerID,Unique account code,object,text id,"7,043 distinct values",0.0,0,7043,7590-VHVEG,"identifier: unique per row, carries no pattern; keep for joining scores back, never as a model input",,,
+raw,gender,Customer gender as recorded,object,category,Female / Male,0.0,0,2,Female,"fine as an input, but see hypotheses: no churn difference found; consider fairness review before use",,,
+raw,SeniorCitizen,"1 if the customer is a senior citizen, else 0",object,0/1 flag,0 / 1,0.0,0,2,0,fine,,,
+raw,Partner,Customer has a partner,object,Yes/No,No / Yes,0.0,0,2,Yes,fine,,,
+raw,Dependents,Customer has dependents (children etc.),object,Yes/No,No / Yes,0.0,0,2,No,fine,,,
+raw,tenure,Months the customer has been with the company,object,months,73 distinct values,0.0,0,73,1,"fine, but for churners it is measured up to exit, for stayers up to the snapshot: possible leakage, unclear from this data",,,
+raw,PhoneService,Customer has home phone service,object,Yes/No,No / Yes,0.0,0,2,No,fine; partly overlaps with MultipleLines,,,
+raw,MultipleLines,Has more than one phone line,object,category,No / No phone service / Yes,0.0,0,3,No phone service,fine after cleaning: 'No phone service' repeats PhoneService=No,,,
+raw,InternetService,Type of internet service,object,category,DSL / Fiber optic / No,0.0,0,3,DSL,fine,,,
+raw,OnlineSecurity,Has online security add-on,object,category,No / No internet service / Yes,0.0,0,3,No,fine after cleaning: 'No internet service' repeats InternetService=No,,,
+raw,OnlineBackup,Has online backup add-on,object,category,No / No internet service / Yes,0.0,0,3,Yes,fine after cleaning (same quirk as OnlineSecurity),,,
+raw,DeviceProtection,Has device protection add-on,object,category,No / No internet service / Yes,0.0,0,3,No,fine after cleaning (same quirk),,,
+raw,TechSupport,Has tech support add-on,object,category,No / No internet service / Yes,0.0,0,3,No,fine after cleaning (same quirk),,,
+raw,StreamingTV,Streams TV through the service,object,category,No / No internet service / Yes,0.0,0,3,No,fine after cleaning (same quirk),,,
+raw,StreamingMovies,Streams movies through the service,object,category,No / No internet service / Yes,0.0,0,3,No,fine after cleaning (same quirk),,,
+raw,Contract,Contract length,object,category,Month-to-month / One year / Two year,0.0,0,3,Month-to-month,fine,,,
+raw,PaperlessBilling,"Bills sent by e-mail, not paper",object,Yes/No,No / Yes,0.0,0,2,Yes,fine,,,
+raw,PaymentMethod,How the customer pays,object,category,Bank transfer (automatic) / Credit card (automatic) / Electronic check / Mailed check,0.0,0,4,Electronic check,fine,,,
+raw,MonthlyCharges,Amount billed per month now,object,US dollars per month,"1,585 distinct values",0.0,0,1585,29.85,fine; also the revenue measure used in this project,,,
+raw,TotalCharges,Total billed over the customer's life,object,US dollars,"6,530 distinct values",0.16,11,6531,29.85,derived: roughly tenure x monthly price; strongly collinear with tenure; stored as text with 11 blanks in the raw file,,,
+raw,Churn,Customer left in the observation window,object,Yes/No,No / Yes,0.0,0,2,No,TARGET. Never use as input,,,

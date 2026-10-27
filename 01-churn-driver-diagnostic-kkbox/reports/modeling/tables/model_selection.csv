@@ -1,0 +1,4 @@
+family,nested_auc,auc_sd,top20_capture,pr_auc,brier,ece,simplicity_rank,seconds_to_score_1000,within_1sd_of_best,chosen
+glm,0.8503,0.0106,0.5526,0.6731,0.1328,0.0235,1,0.0031,True,True
+xgb,0.8503,0.0088,0.5559,0.671,0.1332,0.0252,2,0.0043,True,False
+rf,0.8476,0.0064,0.5446,0.6625,0.1343,0.0273,3,0.0307,True,False

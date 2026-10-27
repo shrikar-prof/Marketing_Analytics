@@ -1,0 +1,22 @@
+{
+ "family": "glm",
+ "params": {
+  "penalty": "elasticnet",
+  "C": 9.512835184510749,
+  "l1_ratio": 0.05281079501960359
+ },
+ "kept": [
+  "contract_ord",
+  "m2m_fiber",
+  "m2m_echeck",
+  "m2m_first_year",
+  "first_year",
+  "log_tenure",
+  "internet_no_techsupport",
+  "internet_no_protection",
+  "n_protection",
+  "household_size"
+ ],
+ "feature_set": "eng",
+ "seed": 42
+}

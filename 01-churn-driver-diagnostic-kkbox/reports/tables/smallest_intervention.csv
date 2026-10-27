@@ -1,0 +1,8 @@
+lever,eligible,eligible_share_of_base_pct,mean_risk_drop_pts,customers_with_positive_saving,total_modeled_saving_usd_per_month,net_modeled_saving_usd_per_month,n_for_50pct,share_of_eligible_50pct,share_of_base_50pct,saving_at_50pct_usd,n_for_80pct,share_of_eligible_80pct,share_of_base_80pct,saving_at_80pct_usd,test_only_share_of_eligible_50pct,test_only_share_of_eligible_80pct,top_decile_of_eligible_share_of_saving_pct
+Contract: month-to-month -> one year (bill unchanged),3875,55.02,17.9,3875,48620.0,48620.0,1060,27.35,15.05,24325.92,2072,53.47,29.42,38897.25,27.55,53.69,21.81
+PaymentMethod: electronic check -> automatic bank transfer (bill unchanged),2365,33.58,6.08,2365,11266.03,11266.03,771,32.6,10.95,5634.97,1430,60.47,20.3,9013.46,32.7,61.18,17.57
+PaperlessBilling: yes -> no (bill unchanged),4171,59.22,5.76,4171,18509.91,18509.91,1119,26.83,15.89,9261.78,2115,50.71,30.03,14808.48,27.02,51.31,20.88
+TechSupport: no -> yes (bill rises by add-on price),3473,49.31,5.67,3473,14554.65,14554.65,1078,31.04,15.31,7278.52,2018,58.11,28.65,11644.71,30.91,57.69,19.39
+OnlineSecurity: no -> yes (bill rises by add-on price),3498,49.67,6.64,3498,17359.64,17359.64,1105,31.59,15.69,8680.32,2052,58.66,29.14,13890.35,31.53,58.35,18.55
+TechSupport: no -> yes (bill unchanged),3473,49.31,0.37,1267,1958.95,641.0,451,12.99,6.4,980.47,841,24.22,11.94,1568.35,13.96,25.93,39.92
+OnlineSecurity: no -> yes (bill unchanged),3498,49.67,1.36,3498,3274.09,3274.09,521,14.89,7.4,1638.07,1006,28.76,14.28,2620.04,15.83,30.24,35.59

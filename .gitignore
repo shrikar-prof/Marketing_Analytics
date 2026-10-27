@@ -1,0 +1,38 @@
+# ── Raw source data (too large for GitHub; re-download per each problem_description.md) ──
+**/data/raw/
+
+# ── Processed / generated data ──
+**/*.parquet
+
+# ── Trained model artefacts ──
+**/models/*.joblib
+**/models/*.db
+
+# ── Python ──
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# ── Jupyter ──
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# ── macOS ──
+.DS_Store
+**/.DS_Store
+
+# ── Editors ──
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Environment ──
+.env
+*.env
+venv/
+.venv/

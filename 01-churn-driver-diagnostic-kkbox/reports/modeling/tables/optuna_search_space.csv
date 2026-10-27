@@ -1,0 +1,14 @@
+family,parameter,range,why this range
+glm,C,log 0.001 to 10,inverse penalty strength; log scale because useful values span orders of magnitude
+glm,l1_ratio,0 to 1,mix of ridge (0) and lasso (1) penalty; lasso can zero out weak columns
+xgb,n_estimators,100 to 600 step 50,number of boosting rounds
+xgb,learning_rate,log 0.01 to 0.2,step size
+xgb,max_depth,2 to 7,tree depth; small data wants shallow trees
+xgb,min_child_weight,log 1 to 30,minimum summed weight in a leaf; guards against noise
+xgb,subsample,0.5 to 1.0,share of rows per round
+xgb,colsample_bytree,0.4 to 1.0,share of columns per tree
+xgb,reg_lambda,log 0.01 to 30,L2 penalty on leaf values
+rf,n_estimators,200 to 600 step 100,more trees steady the average; gains stop early
+rf,max_depth,3 to 14,shallow trees cannot overfit; deep ones can
+rf,min_samples_leaf,1 to 40 (log),"bigger leaves smooth the prediction; 40 of 4,500 rows is under 1%"
+rf,max_features,0.1 to 0.8,share of columns tried at each split; lower decorrelates trees

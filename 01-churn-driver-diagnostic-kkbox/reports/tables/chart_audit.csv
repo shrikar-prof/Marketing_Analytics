@@ -1,0 +1,43 @@
+file_under_reports,what_it_shows,key_takeaway,readable
+exploration/charts/01_target_customers_vs_revenue.png,Leavers share of customers vs of revenue,"26.5% of customers, 30.5% of monthly revenue",yes
+exploration/charts/02_churn_rate_all_categories.png,"Churn rate of every category, sorted",Range 3% to 45%; gender and phone service sit on the 26.5% average,"yes (tall, small text)"
+exploration/charts/03_churn_by_contract.png,Churn by contract,"Month-to-month 43%, one year 11%, two year 3%",yes
+exploration/charts/04_churn_by_tenure.png,Churn by tenure band,"0-6 months 53%, 49-72 months 10%",yes
+exploration/charts/05_churn_by_internet.png,Churn by internet type,"Fiber 42%, DSL 19%, none 7%",yes
+exploration/charts/06_churn_by_payment.png,Churn by payment method,"Electronic check 45%, others 15-19%",yes
+exploration/charts/07_churn_by_monthly_charge.png,Churn by bill band,"10% under $30, 38% at $70-90; not monotonic","yes, but blank right margin and 'average' label sits on the $90+ bar"
+exploration/charts/08_churn_by_addon.png,"Churn with/without each add-on, internet customers",Security and tech support 15% vs 42%; streaming gap about 4 points,"yes, average label touches bars"
+exploration/charts/10_heat_contract_by_internet.png,Churn by contract x internet,Month-to-month highest in every internet type (fiber 55%),yes
+exploration/charts/11_heat_tenure_by_contract.png,Churn by tenure band x contract,Month-to-month falls 55% to 26%; five cells under 100 customers marked *,yes
+exploration/charts/12_heat_payment_by_contract.png,Churn by payment x contract,Month-to-month e-check 54% vs about 33% automatic,yes
+exploration/charts/13_heat_techsupport_by_internet.png,Churn by tech support x internet,Tech support goes with lower churn on DSL and fiber,yes
+exploration/charts/14_concentration_curve.png,"Cumulative churn vs customers, 17 segments","Riskiest 20% hold about 46% of leavers, 52% of lost revenue (in-sample, segment steps)",yes; lines are straight between 17 points
+exploration/charts/15_candidate_groups_revenue.png,"Customer share vs lost-revenue share, 7 groups","Month-to-month fiber first year: 13% of customers, 38% of lost revenue",yes
+exploration/charts/16_correlations.png,Pearson and Spearman correlations,Tenure-TotalCharges 0.83; MonthlyCharges-avg spend 1.00; tenure-churn -0.35,yes
+exploration/charts/17_tenure_distribution.png,"Tenure histogram, leavers vs stayers",About 40% of leavers sit in the first 6-month bin,yes
+modeling/charts/evaluation_panel.png,"Six panels: ROC, precision-recall, reliability, decile, capture, thresholds (test)",AUC 0.847; calibrated within a few points; top 20% holds 54% of lost revenue,"yes (small text, legend small)"
+modeling/charts/decile_lift.png,Churn rate by risk decile (test),"Decile 1 76.6%, deciles 9-10 under 1%",yes
+modeling/charts/reliability_curve.png,Predicted vs actual by decile,Points near diagonal; ECE 0.021; decile 4 about 5 points low,yes
+modeling/charts/threshold_curves.png,"Precision, recall, share flagged, revenue captured by cut-off","Higher cut-off: precision up, recall down",yes
+modeling/charts/driver_importance.png,"Permutation and SHAP importance by column, coloured by type","InternetService, MonthlyCharges, tenure, Contract lead; gender, Partner near zero",yes
+modeling/charts/counterfactual_levers.png,What-if change in predicted churn with 95% intervals,Contract -18 pts; add-on rows depend on bill assumption,yes (long labels)
+modeling/charts/optuna_glm_history.png,GLM trial AUC by trial,Plateau at 0.851 after about 10 trials,"partly: two bad trials (0.72, 0.82) squash the plateau"
+modeling/charts/optuna_glm_importance.png,GLM parameter importance,"l1_ratio 0.65, C 0.35",yes
+modeling/charts/optuna_xgb_history.png,XGBoost trial AUC by trial,Plateau about 0.850,yes
+modeling/charts/optuna_xgb_importance.png,XGBoost parameter importance,"learning_rate 0.26, subsample 0.22; no single dominant",yes
+modeling/charts/optuna_rf_history.png,Random forest trial AUC by trial,Plateau about 0.848,yes
+modeling/charts/optuna_rf_importance.png,Random forest parameter importance,"max_depth 0.63, max_features 0.30",yes
+modeling/charts/feature_correlations.png,Engineered-feature rank correlations (train),first_year and m2m_first_year 0.9; log_tenure vs first_year -0.8; price_resid about 0,yes (small numbers)
+modeling/charts/feat_contract_ord.png,Churn by contract_ord (train),43% / 11% / 3%,"yes, n label touches title"
+modeling/charts/feat_first_year.png,Churn by first_year,47% vs 17%,yes
+modeling/charts/feat_household_size.png,Churn by household_size,34% / 25% / 14%,yes
+modeling/charts/feat_internet_no_protection.png,Churn when internet and no protection add-on,57% vs 20%,yes
+modeling/charts/feat_internet_no_techsupport.png,Churn when internet and no tech support,42% vs 12%,yes
+modeling/charts/feat_log_tenure.png,Churn by log-tenure decile,58% falling to 4%,yes
+modeling/charts/feat_m2m_echeck.png,Churn for month-to-month e-check,54% vs 17%,yes
+modeling/charts/feat_m2m_fiber.png,Churn for month-to-month fiber,55% vs 14%,yes
+modeling/charts/feat_m2m_first_year.png,Churn for month-to-month first year,51% vs 17%,yes
+modeling/charts/feat_n_protection.png,Churn by number of protection add-ons,"Non-monotonic: 30% at 0, 39% at 1, 5% at 4",yes
+modeling/charts/feat_n_streaming.png,Churn by number of streaming add-ons,"23% at 0, 30-31% at 1-2",yes
+modeling/charts/feat_price_resid.png,Churn by price residual decile,Flat around 26%; no signal (feature dropped),"yes, n labels collide with legend"
+modeling/charts/model_comparison.png,"CV AUC, top-20% capture, Brier for 7 models (25 folds, mean and 1 SD)","All five model families within one SD of each other; rule 2 is clearly lower on AUC","yes, but x-axes are cut (start at 0.78 / 0.41 / 0.12) so bar lengths exaggerate gaps; read the error bars"

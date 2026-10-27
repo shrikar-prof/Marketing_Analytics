@@ -1,0 +1,40 @@
+{
+ "kept": [
+  "contract_ord",
+  "m2m_fiber",
+  "m2m_echeck",
+  "m2m_first_year",
+  "first_year",
+  "log_tenure",
+  "internet_no_techsupport",
+  "internet_no_protection",
+  "n_protection",
+  "household_size"
+ ],
+ "dropped": {
+  "n_streaming": "fails signal rule: |Spearman rho| >= 0.10",
+  "price_resid": "fails signal rule: |Spearman rho| >= 0.10"
+ },
+ "raw_cat": [
+  "gender",
+  "Partner",
+  "Dependents",
+  "PhoneService",
+  "MultipleLines",
+  "InternetService",
+  "OnlineSecurity",
+  "OnlineBackup",
+  "DeviceProtection",
+  "TechSupport",
+  "StreamingTV",
+  "StreamingMovies",
+  "Contract",
+  "PaperlessBilling",
+  "PaymentMethod"
+ ],
+ "raw_num": [
+  "SeniorCitizen",
+  "tenure",
+  "MonthlyCharges"
+ ]
+}
