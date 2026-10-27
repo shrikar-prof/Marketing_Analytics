@@ -1,5 +1,8 @@
-# ── Raw source data (too large for GitHub; re-download per each problem_description.md) ──
-**/data/raw/
+# ── Large raw data files (exceed GitHub's 50 MB recommendation) ──
+# Re-download with the data/raw/download.sh in each project folder.
+01-churn-driver-diagnostic-kkbox/data/raw/kkbox_transactions_v2.csv
+03-demand-forecast-m5/data/raw/m5.zip
+03-demand-forecast-m5/data/raw/m5/
 
 # ── Processed / generated data ──
 **/*.parquet
