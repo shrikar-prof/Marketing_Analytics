@@ -1,0 +1,3 @@
+scenario,TV_wkly_usd,OOH_wkly_usd,Print_wkly_usd,Facebook_wkly_usd,Search_wkly_usd,basis,modeled_direction
+Current,33559,105756,8914,4418,6991,measured,baseline
+Shift_20pct_TV_to_Facebook,26847,105756,8914,11130,6991,modeled association,positive (FB curve still rising at current spend)

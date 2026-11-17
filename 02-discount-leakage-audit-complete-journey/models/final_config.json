@@ -1,0 +1,34 @@
+{
+  "model_family": "CatBoost",
+  "model_params": {
+    "iterations": 786,
+    "learning_rate": 0.012487685950366444,
+    "depth": 9,
+    "l2_leaf_reg": 0.015185747074546159,
+    "bagging_temperature": 0.7641667217893455,
+    "random_strength": 0.5964423246121136,
+    "random_seed": 42,
+    "verbose": 0
+  },
+  "seed": 42,
+  "train_weeks": "1-39",
+  "test_weeks": "40-52",
+  "features": [
+    "is_national",
+    "week_sin",
+    "week_cos",
+    "quarter",
+    "is_top3_dept",
+    "log_quantity",
+    "department",
+    "product_category",
+    "product_type",
+    "store_id"
+  ],
+  "target": "disc_rate",
+  "test_rmse": 0.14700987968647683,
+  "test_r2": 0.1734258532524109,
+  "test_ece": 0.010820268401951839,
+  "capture_top10": 0.2873625137981226,
+  "recoverable_margin_25pct": 20584.94000709802
+}

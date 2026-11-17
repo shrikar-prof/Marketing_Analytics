@@ -1,0 +1,28 @@
+dataset,column,type,missing_count,missing_pct,distinct_values,example,usability_note
+robyn_weekly,DATE,datetime64[ns],0,0.0,208,2015-11-23 00:00:00,date identifier — not a model input
+robyn_weekly,revenue,float64,0,0.0,208,2754371.66666667,TARGET — weekly revenue in USD
+robyn_weekly,tv_S,float64,0,0.0,93,22358.346666666668,TV spend in USD — media input
+robyn_weekly,ooh_S,float64,0,0.0,86,0.0,out-of-home spend in USD — media input
+robyn_weekly,print_S,float64,0,0.0,88,12728.488888888895,print spend in USD — media input
+robyn_weekly,facebook_I,float64,0,0.0,103,24301284.237530436,Facebook impressions — correlated with spend; include only one to avoid collinearity
+robyn_weekly,search_clicks_P,float64,0,0.0,177,0.0,search clicks — correlated with spend; include only one
+robyn_weekly,search_S,float64,0,0.0,159,0.0,search (paid) spend in USD — media input
+robyn_weekly,competitor_sales_B,int32,0,0.0,208,8125009,"competitor sales index — control variable, fine to include"
+robyn_weekly,facebook_S,float64,0,0.0,92,7607.1329148046,Facebook paid spend in USD — media input
+robyn_weekly,events,object,0,0.0,3,na,event flag (string) — encode as dummy; treat 'na' as 0
+robyn_weekly,newsletter,float64,0,0.0,177,19401.6538461538,"newsletter sends — additional marketing variable, fine"
+meridian_geo_media,geo,object,0,0.0,20,Geo0,geography identifier — not a model input directly; use as grouping
+meridian_geo_media,time,datetime64[ns],0,0.0,156,2021-01-25 00:00:00,week start date — identifier
+meridian_geo_media,Channel0_impression,float64,0,0.0,3028,334723.0,Channel 0 impressions — collinear with spend; use one
+meridian_geo_media,Channel1_impression,float64,0,0.0,3077,835023.0,Channel 1 impressions
+meridian_geo_media,Channel2_impression,float64,0,0.0,3051,640496.0,Channel 2 impressions
+meridian_geo_media,Channel3_impression,float64,0,0.0,3101,1792866.0,Channel 3 impressions
+meridian_geo_media,competitor_activity_score_control,float64,0,0.0,3120,-0.11243154,control variable — fine to include
+meridian_geo_media,sentiment_score_control,float64,0,0.0,3120,-2.5312195,control variable — fine to include
+meridian_geo_media,Channel0_spend,float64,0,0.0,3028,3733.023,Channel 0 paid spend — media input
+meridian_geo_media,Channel1_spend,float64,0,0.0,3077,9338.765,Channel 1 paid spend — media input
+meridian_geo_media,Channel2_spend,float64,0,0.0,3051,7171.03,Channel 2 paid spend — media input
+meridian_geo_media,Channel3_spend,float64,0,0.0,3101,20701.168,Channel 3 paid spend — media input
+meridian_geo_media,conversions,float64,0,0.0,3120,12623308.0,total conversions — intermediate KPI; can derive revenue
+meridian_geo_media,revenue_per_conversion,float64,0,0.0,3106,0.034714095,revenue per conversion — multiply × conversions to get revenue
+meridian_geo_media,population,float64,0,0.0,20,847483.56,geo population — normalisation variable; include per-capita alternative

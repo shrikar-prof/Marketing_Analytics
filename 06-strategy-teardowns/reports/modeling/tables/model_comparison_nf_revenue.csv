@@ -1,0 +1,7 @@
+model,n_train,n_features,wf_mae_usd_m,wf_r2,best_alpha
+arm_lag1+rev_lag1,20,2,92.7,0.908,0.01
+arm_lag1+rev_lag1+event,20,3,101.3,0.895,0.01
+arm_lag1+rev_lag1+break+qtr,20,4,101.4,0.904,0.01
+trend+qtr+arm_roll4,20,3,123.8,0.855,0.01
+arm_lag1+post_sharing,20,2,179.5,0.671,1.0
+arm_lag1_only,20,1,187.3,0.628,0.1

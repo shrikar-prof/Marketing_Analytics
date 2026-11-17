@@ -1,0 +1,3 @@
+target_capture,n_lines_to_treat,share_of_base_pct,min_pred_disc_rate
+50%,301305,20.851052050642373,0.202
+80%,723333,50.05643461923067,0.121

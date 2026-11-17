@@ -1,0 +1,5 @@
+CATEGORY,own_price_elasticity,test_RMSE,n_train,interpretation
+ORAL HYGIENE PRODUCTS,0.088,0.2638,99701,1% price increase → 0.1% units change
+COLD CEREAL,0.264,0.4271,148176,1% price increase → 0.3% units change
+FROZEN PIZZA,0.27,0.3623,93789,1% price increase → 0.3% units change
+BAG SNACKS,0.481,0.3652,108018,1% price increase → 0.5% units change

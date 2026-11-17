@@ -1,0 +1,6 @@
+top_pct_by_predicted_demand,n_obs,share_of_total_units_pct,share_of_total_revenue_pct,mean_actual_units
+10,53844,42.6,35.3,83.6
+20,107687,60.8,53.4,59.6
+30,161531,73.1,66.4,47.8
+40,215374,81.9,76.2,40.2
+50,269218,88.3,83.9,34.6

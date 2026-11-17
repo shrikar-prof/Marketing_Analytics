@@ -1,0 +1,6 @@
+finding,lever_type,effect_size,confidence,source,note
+ARM increase $1/month,structural (pricing),+$~360M UCAN revenue/year at Q4'24 membership of 83M,association only — not causal,H1 Spearman rho=0.971 p<0.001 CI [0.861 0.996],Revenue ≈ ARM × members × 3 quarters; ARM +$4.04 over 5 years
+Paid-sharing enforcement (structural break from May 2023),structural (policy),+$1218M/quarter median lift 95% CI [$760M–$1637M],Very reliable — Mann-Whitney p=0.0000,H2 Hodges-Lehmann,Fastest membership growth in dataset followed enforcement
+Price increase → next-quarter net adds,controllable (pricing),Spearman rho=+0.19 (CI [-0.345 to 0.567]),Weak / uncertain — CI includes zero,H6 rho=-0.474 p=0.064 (contradictory direction note),No evidence sustained price rises caused churn post-2022
+Revenue momentum (prior-quarter revenue),structural,coefficient +1.23 (p<0.001 CI [0.91–1.55]),Very reliable in-sample,Model nf_revenue arm_lag1+rev_lag1 wf-MAE $92.7M,Strong autoregressive signal; model R²=0.908
+ARM lag-1 coefficient in revenue model,modeled association,-72.3 (p=0.18 CI [-181 to +36]),Not individually significant — collinear with rev_lag1,Model card coefficient table,ARM signal captured through momentum term not standalone coeff

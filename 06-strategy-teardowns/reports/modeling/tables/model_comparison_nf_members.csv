@@ -1,0 +1,5 @@
+model,n_rows,wf_mae_m,wf_r2,best_alpha
+lag1+post_sharing,20,1.193,0.893,0.01
+lag1+price+sharing,20,1.212,0.89,0.01
+members_lag1_only,20,1.403,0.86,0.01
+lag1+price_event,20,1.419,0.851,0.01

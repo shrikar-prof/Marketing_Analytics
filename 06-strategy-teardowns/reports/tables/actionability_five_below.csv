@@ -1,0 +1,6 @@
+finding,lever_type,effect_size,confidence,source,note
+Expansion rate vs comparable sales,controllable (pace),Spearman rho=-0.577 (permutation p=0.14),Directional only — N=6 insufficient for certainty,H3 exact permutation,FY2023-2024 at ~20% expansion rate both showed negative comps
+Expansion rate vs operating margin,controllable (pace),Spearman rho=-0.820 (permutation p=0.033),Supported in direction — small N,H4 exact permutation,Margin fell from 11.2% (FY2022) to 8.4% (FY2024) during peak expansion
+SGA intensity vs operating margin,structural,coefficient -2.16 (p=0.97 — not significant),Not reliable individually — small N drives Ridge to alpha=100,Model fb_margin LOOCV MAE 1.79ppt vs 2.17ppt naive,SGA/revenue ratio is mechanically linked to margin; not independent lever
+Revenue per store vs expansion pace,controllable (pace),Declined $0.11M/store from FY2022 peak to FY2024 trough; recovered $0.29M in FY2025,Descriptive — N=2 in comparison group no CI possible,H5 direct comparison,Still above $2M company viability threshold throughout
+Moderated expansion (150 stores FY2025),controllable (pace),Comp sales +12.8%; margin recovered to 9.6% from 8.4%,One data point — cannot isolate from macro tailwinds,Finding 4 and 5 findings.md,Strongest available signal that pace moderation works

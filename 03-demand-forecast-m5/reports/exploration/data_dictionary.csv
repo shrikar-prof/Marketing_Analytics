@@ -1,0 +1,24 @@
+Table,Column,Plain meaning,Type,Unit,Allowed / range,% missing,# distinct,Example,Usable,Note
+sales_train_evaluation,item_id,"ID of the specific item (SKU). Use as a grouping key, not a raw numeric input.",object,text,"['HOBBIES_1_001', 'FOODS_2_210', 'FOODS_2_201', 'FOODS_2_202', 'FOODS_2_203']",0.0%,3049,HOBBIES_1_001,identifier,"ID of the specific item (SKU). Use as a grouping key, not a raw numeric input."
+sales_train_evaluation,dept_id,Department: 7 departments. Encode as category for modelling.,object,text,"['FOODS_3', 'HOUSEHOLD_1', 'HOUSEHOLD_2', 'HOBBIES_1', 'FOODS_2']",0.0%,7,HOBBIES_1,encode,Department: 7 departments. Encode as category for modelling.
+sales_train_evaluation,cat_id,"Category: FOODS, HOBBIES, HOUSEHOLD. Encode as category.",object,text,"['FOODS', 'HOUSEHOLD', 'HOBBIES']",0.0%,3,HOBBIES,encode,"Category: FOODS, HOBBIES, HOUSEHOLD. Encode as category."
+sales_train_evaluation,store_id,Store ID: 10 stores. Encode as category.,object,text,"['CA_1', 'CA_2', 'CA_3', 'CA_4', 'TX_1']",0.0%,10,CA_1,encode,Store ID: 10 stores. Encode as category.
+sales_train_evaluation,state_id,"US state: CA, TX, WI. Encode as category.",object,text,"['CA', 'TX', 'WI']",0.0%,3,CA,encode,"US state: CA, TX, WI. Encode as category."
+sales_train_evaluation,d_1 … d_1941,Units sold on that calendar day (integer ≥ 0). Zero may mean zero demand OR stockout.,int64,units sold per day,0 – 763,0.0%,419,1,TARGET,Zero-inflation: 68.0% of all item-day cells are zero.
+calendar,date,Calendar date in YYYY-MM-DD format.,object,varies,"['2011-01-29', '2011-01-30', '2011-01-31', '2011-02-01', '2011-02-02']",0.0%,1969,2011-01-29,identifier,
+calendar,wm_yr_wk,Walmart fiscal year-week code. Links to sell_prices.,int64,varies,"[11101, 11102, 11103, 11104, 11105]",0.0%,282,11101,encode,
+calendar,weekday,Day-of-week name (Monday…Sunday).,object,varies,"['Monday', 'Saturday', 'Sunday', 'Tuesday', 'Wednesday']",0.0%,7,Saturday,encode,
+calendar,wday,"Day-of-week number (1=Saturday … 7=Friday, Walmart convention).",int64,varies,"[1, 2, 3, 4, 5]",0.0%,7,1,encode,
+calendar,month,Calendar month number 1–12.,int64,varies,"[1, 2, 3, 4, 5]",0.0%,12,1,encode,
+calendar,year,Calendar year.,int64,varies,"[2011, 2012, 2013, 2014, 2015]",0.0%,6,2011,encode,
+calendar,event_name_1,"Primary event name on this day (e.g., SuperBowl). Blank when no event.",object,varies,"['LentStart', 'LentWeek2', 'PresidentsDay', 'SuperBowl', 'ValentinesDay']",91.8%,30,SuperBowl,encode,
+calendar,event_type_1,"Type of primary event (Sporting, Cultural, National, Religious).",object,varies,"['Cultural', 'National', 'Religious', 'Sporting']",91.8%,4,Sporting,encode,
+calendar,event_name_2,Secondary event name (overlapping events are rare).,object,varies,"['Cinco De Mayo', 'Easter', ""Father's day"", 'OrthodoxEaster']",99.7%,4,Easter,encode,
+calendar,event_type_2,Type of secondary event.,object,varies,"['Cultural', 'Religious']",99.7%,2,Cultural,encode,
+calendar,snap_CA,"1 if California SNAP (food-stamp) benefit day, else 0.",int64,varies,"[0, 1]",0.0%,2,0,encode,
+calendar,snap_TX,"1 if Texas SNAP benefit day, else 0.",int64,varies,"[0, 1]",0.0%,2,0,encode,
+calendar,snap_WI,"1 if Wisconsin SNAP benefit day, else 0.",int64,varies,"[0, 1]",0.0%,2,0,encode,
+sell_prices,store_id,Store ID; foreign key to sales.,object,text,10,0.0%,10,CA_1,encode,
+sell_prices,item_id,Item ID; foreign key to sales.,object,text,3049,0.0%,3049,HOBBIES_1_001,identifier,
+sell_prices,wm_yr_wk,Walmart fiscal week; foreign key to calendar.,int64,text,282,0.0%,282,11325,encode,
+sell_prices,sell_price,Unit sell price (USD) for that item in that store-week. Missing before item debut.,float64,USD,0.01 – 107.32,0.0%,1048,9.58,encode,

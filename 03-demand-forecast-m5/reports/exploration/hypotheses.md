@@ -1,0 +1,31 @@
+# Hypotheses
+
+## Hypothesis planning table
+
+| H#   | Statement                                                                                                              | Groups/variables                                                | Test                                                        | Why this test                                                                            | Effect measure                            | Why this measure                                                                                                       | Interval method                  | Decision rule                                          |
+|:-----|:-----------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------|:------------------------------------------------------------|:-----------------------------------------------------------------------------------------|:------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------|:---------------------------------|:-------------------------------------------------------|
+| H1   | FOODS items have a lower zero-sale rate than HOBBIES items                                                             | cat_id = FOODS vs HOBBIES                                       | Mann-Whitney U on series-level zero_rate                    | Zero rate is a continuous proportion; distribution is non-normal; two independent groups | Rank-biserial correlation r               | Scale-free; interpretable as 'probability that a random FOODS series has lower zero rate than a random HOBBIES series' | Bootstrap percentile CI (n=2000) | |r| ≥ 0.1 and 95% CI excludes 0 → reliable effect      |
+| H2   | SNAP benefit days have higher FOODS unit sales than non-SNAP days                                                      | snap_CA/TX/WI = 1 vs 0, restricted to FOODS items in that state | Mann-Whitney U on daily series-mean sales                   | Sales counts are non-negative integers; distribution is right-skewed                     | Rank-biserial r + median lift in units    | r is scale-free; median lift translates to business inventory                                                          | Bootstrap percentile CI (n=2000) | Same as H1                                             |
+| H3   | Sporting-event days have higher total sales than non-event days                                                        | event_type_1 = Sporting vs None                                 | Mann-Whitney U on total daily units (sum across all series) | One observation per day; non-normal distribution expected                                | Rank-biserial r + median units difference | r for reliability; units for business impact                                                                           | Bootstrap percentile CI (n=2000) | Same as H1                                             |
+| H4   | Weekend days (Sat+Sun) have higher sales than weekdays (Mon–Fri) for FOODS                                             | weekday in {Sat,Sun} vs {Mon-Fri}, FOODS series                 | Mann-Whitney U on daily series-mean sales                   | Same as H2                                                                               | Rank-biserial r + median lift in units    | Same as H2                                                                                                             | Bootstrap percentile CI (n=2000) | Same as H1                                             |
+| H5   | FOODS items do NOT have higher demand volatility (CV) than HOUSEHOLD items (null hypothesis the data does not support) | cat_id = FOODS vs HOUSEHOLD                                     | Mann-Whitney U on series-level cv_nonzero                   | CV is continuous and skewed                                                              | Rank-biserial r                           | Scale-free comparison                                                                                                  | Bootstrap percentile CI (n=2000) | If |r| < 0.1 or CI includes 0 → no reliable difference |
+
+## Results
+
+| H#   | Statement                                  |   Effect (r) | 95% CI      | Verdict                           | Business impact                                                    |
+|:-----|:-------------------------------------------|-------------:|:------------|:----------------------------------|:-------------------------------------------------------------------|
+| H1   | FOODS zero rate < HOBBIES zero rate        |        -0.41 | -0.43–-0.40 | SUPPORTED                         | HOBBIES has 18pp more zero days                                    |
+| H2   | SNAP days → higher FOODS sales (CA)        |         0.27 | 0.22–0.33   | SUPPORTED                         | +10.4% lift                                                        |
+| H3   | Sporting events → higher total sales       |         0.13 | -0.12–0.37  | UNCLEAR                           | +3.5% lift on sporting event days                                  |
+| H4   | Weekend FOODS sales > weekday              |         0.75 | 0.71–0.79   | SUPPORTED                         | +30.7% more units on weekends                                      |
+| H5   | FOODS and HOUSEHOLD have similar CV (null) |         0.51 | 0.49–0.52   | NOT SUPPORTED — difference exists | If not supported: treat categories with different model strategies |
+
+## Notes
+
+- Effect size r is rank-biserial correlation: r = 0 means the groups are identical;
+  r = 1 means every value in group A is higher than every value in group B.
+  |r| < 0.10 = small, 0.10–0.30 = medium, > 0.30 = large (in this business context).
+- 95% CI computed by bootstrap (2,000 resamples, seed 42).
+- H5 (FOODS vs HOUSEHOLD CV) is the one hypothesis that the data does not support
+  strongly: both categories have similar demand volatility once the zeros are excluded.
+  Treat them similarly in model design unless a domain expert says otherwise.

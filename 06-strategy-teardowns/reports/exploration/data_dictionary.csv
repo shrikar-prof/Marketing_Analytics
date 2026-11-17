@@ -1,0 +1,20 @@
+column,meaning,type,unit,missing_pct,usability,dataset
+quarter,Quarter label (e.g. Q4'19),string,—,0%,Date key — not a model input,netflix
+end_date,Last calendar day of the quarter,datetime,date,0%,Date key,netflix
+paid_members_m,Paid UCAN memberships at end of quarter,float,millions,17% (Q1–Q4'25),Target/feature — core business metric,netflix
+net_adds_m,Net new paid memberships added during the quarter,float,millions,17%,Feature — derived from successive membership counts,netflix
+arm_usd,Average monthly revenue per membership (ARM),float,USD/month,17%,Feature — key pricing metric,netflix
+revenue_usd_m,Total UCAN quarterly streaming revenue,float,USD millions,0%,Target — core business metric,netflix
+has_members,Whether membership data is available for this quarter,bool,—,0%,Filter flag,netflix
+fiscal_year,Fiscal year (e.g. 2018 = Feb 2018–Feb 2019),int,—,0%,Date key,five_below
+stores_eop,Total stores open at end of fiscal year,int,count,0%,Feature — core expansion metric,five_below
+net_new_stores,Net new stores opened during the fiscal year,int,count,0%,Feature — expansion pace,five_below
+comp_sales_pct,Comparable sales growth (stores open ≥15 months),float,% YoY,0%,Target — same-store productivity,five_below
+note,"Context note (e.g. COVID, 53-week year)",string,—,varies,Annotation only — do not encode,five_below
+fiscal_year_end,Exact date the fiscal year ended,datetime,date,0%,Date key,five_below
+revenue_usd,Annual net sales,float,USD,0%,Feature,five_below
+operating_income_usd,Operating income (revenue minus COGS and SGA),float,USD,0%,Feature — profitability measure,five_below
+net_income_usd,Net income after tax,float,USD,0%,Feature,five_below
+cogs_usd,Cost of goods sold,float,USD,12% (older years tagged differently),Feature,five_below
+sga_usd,"Selling, general and administrative expenses",float,USD,0%,Feature,five_below
+capex_usd,"Capital expenditures (property, plant, equipment)",float,USD,0%,Feature — proxy for new store investment,five_below

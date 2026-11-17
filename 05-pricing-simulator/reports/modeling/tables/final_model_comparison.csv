@@ -1,0 +1,9 @@
+Model,CV_RMSE_mean,CV_RMSE_std
+LightGBM (tuned),0.1043,0.004
+XGBoost (tuned),0.1046,0.0041
+CatBoost (default),0.1053,0.0044
+LightGBM (default),0.1063,0.0038
+Random Forest,0.1069,0.0042
+XGBoost (default),0.107,0.0041
+Ridge FE,0.4132,0.0033
+OLS FE,0.432,0.0343

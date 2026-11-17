@@ -1,0 +1,5 @@
+model,n_rows,n_features,loocv_mae,loocv_r2,best_alpha
+sga_intensity_only,8,1,1.795,-0.455,100.0
+sga+margin_lag+covid,7,3,1.909,-0.505,100.0
+expansion+sga+covid,7,3,1.981,-0.766,100.0
+expansion+margin_lag+covid,7,3,2.505,-1.707,100.0

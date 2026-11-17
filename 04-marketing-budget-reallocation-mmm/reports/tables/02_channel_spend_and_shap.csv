@@ -1,0 +1,6 @@
+channel,total_4yr_spend_usd,spend_share_of_total_pct,weeks_active_of_208,mean_active_week_spend_usd,shap_mean_abs_usd,shap_share_of_media_pct,note
+TV,3087488,21.3,92,33560,87476,38.6,"modeled association, not causal ROI"
+OOH,8989332,61.9,85,105757,43540,19.2,"modeled association, not causal ROI"
+Print,775556,5.3,87,8914,84226,37.1,"modeled association, not causal ROI"
+Facebook,446297,3.1,101,4419,10387,4.6,"modeled association, not causal ROI"
+Search,1230427,8.5,176,6991,1265,0.6,"modeled association, not causal ROI"

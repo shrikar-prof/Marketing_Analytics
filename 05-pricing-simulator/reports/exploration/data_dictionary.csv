@@ -1,0 +1,22 @@
+Column,Meaning,Type,Range / Values,% Missing,Distinct,Example,Usability
+WEEK_END_DATE,Date the sales week ends (Wednesday),Date,2009-01-14 – 2012-01-04,0.0%,156,2009-01-14 00:00:00,time index
+STORE_NUM,Store identifier,Integer,301 – 999,0.0%,77,367,identifier
+UPC,Universal Product Code (barcode),Integer,10 digits,0.0%,55,1111009477,identifier
+UNITS,Units sold in the week,Integer,0 – 1800,0.0%,568,13,TARGET
+VISITS,Number of shopping trips including this product,Integer,0 – 1497,0.0%,456,13,input
+HHS,Households (unique buyers),Integer,0 – 1239,0.0%,446,13,input (collinear with VISITS)
+SPEND,"Total dollar spend (PRICE × UNITS, approximately)",Float,$0 – $3671,0.0%,20287,18.07,input / check
+PRICE,Shelf price actually charged that week,Float,$0 – $11.46,0.0%,699,1.39,key input
+BASE_PRICE,Regular everyday price (no promo),Float,$0.55 – $11.46,0.0%,676,1.57,key input
+FEATURE,1 = product in weekly circular ad; 0 = not,Binary,"0, 1",0.0%,2,0,input
+DISPLAY,1 = in-store display; 0 = not,Binary,"0, 1",0.0%,2,0,input
+TPR_ONLY,1 = temporary price reduction with no feature/display,Binary,"0, 1",0.0%,2,1,input
+DESCRIPTION,Product name,String,text,0.0%,52,PL MINI TWIST PRETZELS,identifier
+MANUFACTURER,Brand manufacturer name,String,text,0.0%,16,PRIVATE LABEL,identifier
+CATEGORY,High-level product category,String,4 values,0.0%,4,BAG SNACKS,grouping
+SUB_CATEGORY,Sub-category,String,7 values,0.0%,7,PRETZELS,grouping
+PRODUCT_SIZE,Package size,String,text,0.0%,28,15 OZ,descriptor
+STORE_NAME,Store name,String,text,0.0%,73,15TH & MADISON,identifier
+SEG_VALUE_NAME,"Store value segment (e.g., Mainstream, Upscale)",String,5 values,0.0%,3,VALUE,grouping
+SALES_AREA_SIZE_NUM,Store selling floor area (sq ft),Float,text,0.0%,73,24721,store control
+AVG_WEEKLY_BASKETS,Average weekly transactions at store,Float,numeric,0.0%,77,12706.532051,store control

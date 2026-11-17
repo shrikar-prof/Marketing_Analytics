@@ -1,0 +1,2 @@
+lever,intervention,eligible_rows,mean_delta_disc_rate,ci_lo_95,ci_hi_95,assoc_dollar_saving
+log_quantity (pack size),0.693 → 0.693,97000,-0.020548228174448013,-0.02079304661601782,-0.02033940562978387,13671.474261948839

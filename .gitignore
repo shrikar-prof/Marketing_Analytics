@@ -39,3 +39,8 @@ build/
 *.env
 venv/
 .venv/
+
+# ── Large per-row score files ──
+**/reports/modeling/scores.csv
+**/reports/customer_risk_scores.csv
+**/reports/customer_discount_scores.csv

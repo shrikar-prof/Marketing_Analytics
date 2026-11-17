@@ -1,0 +1,5 @@
+category,mean_price_$,mean_weekly_units,total_annual_revenue_$M,exploration_log_log_slope,ridge_fe_elasticity_note,unit_lift_5pct_cut_assoc,unit_lift_10pct_cut_assoc,pct_lift_5pct_cut,pct_lift_10pct_cut
+ORAL HYGIENE PRODUCTS,3.77,4.5,92.16,-0.38,0.088 (positive: store confounding),0.1,0.2,1.9%,3.8%
+COLD CEREAL,2.74,34.3,801.22,-0.34,0.264 (positive: store confounding),0.6,1.2,1.7%,3.4%
+FROZEN PIZZA,5.31,12.1,345.52,-1.16,0.27 (positive: store confounding),0.7,1.4,5.8%,11.6%
+BAG SNACKS,2.2,20.5,252.85,-1.44,0.481 (positive: store confounding),1.5,3.0,7.2%,14.4%

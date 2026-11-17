@@ -1,0 +1,6 @@
+pct_cutoff,pred_units_threshold,share_flagged,mean_actual_units_above,pct_total_units_captured
+0.1,2.05,0.9,20.01,0.994
+0.25,4.08,0.75,23.45,0.971
+0.5,9.67,0.5,31.92,0.881
+0.75,21.43,0.25,49.11,0.677
+0.9,41.17,0.1,78.7,0.434
